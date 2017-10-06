@@ -7,6 +7,7 @@ class Stack
   def add(el)
     # adds an element to the stack
     @stack.push(el)
+    el
   end
 
   def remove
@@ -16,7 +17,7 @@ class Stack
 
   def show
     # return a copy of the stack
-    p @stack
+    @stack.dup
   end
 end
 
@@ -27,6 +28,7 @@ class Queue
 
   def enqueue(el)
     @queue.unshift(el)
+    el
   end
 
   def dequeue
@@ -34,7 +36,7 @@ class Queue
   end
 
   def show
-  p @queue
+  @queue.dup
   end
 end
 
@@ -53,6 +55,7 @@ class Map
     else
       @map.push([key, value])
     end
+    nil
   end
 
   def lookup(key)
