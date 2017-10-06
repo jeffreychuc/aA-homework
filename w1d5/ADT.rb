@@ -76,6 +76,19 @@ class Map
   end
 
   def show
-    p @map
+    deep_dup(@map)
+  end
+
+  private
+  def deep_dup(arr)
+    fin_arr = []
+    arr.each do |el|
+      if el.is_a?(Array)
+        fin_arr.push(el.dup)
+      else
+        fin_arr.push(el)
+      end
+    end
+    fin_arr
   end
 end
