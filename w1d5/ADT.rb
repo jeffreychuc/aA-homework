@@ -37,3 +37,42 @@ class Queue
   p @queue
   end
 end
+
+class Map
+  def initialize
+    @map = Array.new { Array.new }
+  end
+
+  def assign(key, value)
+    if @map.any? { |k, v| k == key  }
+      @map.each do |element|
+        if element[0] == key
+          element[1] = value
+        end
+      end
+    else
+      @map.push([key, value])
+    end
+  end
+
+  def lookup(key)
+    @map.each do |k, v|
+      if k == key
+        return v
+      end
+    end
+    nil
+  end
+
+  def remove(key)
+    @map.each_with_index do |element, i|
+      if element[0] == key
+        @map.delete_at(i)
+      end
+    end
+  end
+
+  def show
+    p @map
+  end
+end
