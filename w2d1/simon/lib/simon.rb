@@ -32,10 +32,12 @@ class Simon
     @seq.each do |color|
       seq_s += color + " "
     end
-    puts "The sequence is:"
-    puts seq_s
-    sleep(3)
-    system("clear")
+    if __FILE__ == $PROGRAM_NAME
+      puts "The sequence is:"
+      puts seq_s
+      sleep(3)
+      system("clear")
+    end
   end
 
   def require_sequence
@@ -53,12 +55,16 @@ class Simon
   end
 
   def round_success_message
-    puts "You guessed the sequence correctly!"
-    system("clear")
+    if __FILE__ == $PROGRAM_NAME
+      puts "You guessed the sequence correctly!"
+      system("clear")
+    end
   end
 
   def game_over_message
-    puts "Sorry you lost!"
+    if __FILE__ == $PROGRAM_NAME
+      puts "Sorry you lost!"
+    end
   end
 
   def reset_game
