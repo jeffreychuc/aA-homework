@@ -10,7 +10,11 @@ class Simon
   end
 
   def play
-
+    until @game_over
+      take_turn
+    end
+    game_over_message
+    reset_game
   end
 
   def take_turn
@@ -23,7 +27,11 @@ class Simon
   end
 
   def show_sequence
-
+    add_random_color
+    # commented out below lines for rspec testing
+    # puts @seq.to_s
+    # sleep(1)
+    # system("clear")
   end
 
   def require_sequence
@@ -45,4 +53,9 @@ class Simon
   def reset_game
 
   end
+end
+
+if __FILE__ == $PROGRAM_NAME
+  game = Simon.new
+  game.play
 end
