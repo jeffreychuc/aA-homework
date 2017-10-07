@@ -1,1 +1,2 @@
-# This is an implementation of the Simon memory game in ruby.
+#Simon
+This is an implementation of the Simon game in Ruby.
