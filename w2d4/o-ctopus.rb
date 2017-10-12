@@ -1,15 +1,20 @@
 FISH = ['fish', 'fiiish', 'fiiiiish', 'fiiiish', 'fffish', 'ffiiiiisshh', 'fsh', 'fiiiissshhhhhh'].freeze
 
 def slugg_octo(fish_arr)
-  biggest = 0
-  fish_arr.each do |i|
-    fish_arr.each do |j|
-      if i.length > j.length
-        biggest = i
+  sorted = true
+  until sorted
+    sorted = true
+    fish_arr.each_with_index do |f1, i|
+      fish_arr.each_with_index do |f2, j|
+        if f1.length > f2.length
+          fish_arr[i] ,fish_arr[j] = fish_arr[j], fish_arr[i]
+          sorted = false
+        end
       end
     end
+    p "wtf"
   end
-  biggest
+  fish_arr.last
 end
 
 # longest fish via N^2
