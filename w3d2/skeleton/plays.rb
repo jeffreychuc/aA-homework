@@ -82,11 +82,11 @@ class Play
   end
 end
 
-class Playwrite
+class Playwrights
   attr_accessor :title, :year, :playwright_id
 
   def self.all
-    data = PlayDBConnection.instance.execute("SELECT * FROM playwrites")
+    data = PlayDBConnection.instance.execute("SELECT * FROM playwrights")
     data.map { |datum| Play.new(datum) }
   end
 
@@ -102,9 +102,9 @@ class Playwrite
   end
 
   def initialize(options)
-    @id = options['id']
-    @name = options['name']
-    @birth_year = options['birth_year']
+    @id = options[:id]
+    @name = options[:name]
+    @birth_year = options[:birth_year]
   end
 
   def create
