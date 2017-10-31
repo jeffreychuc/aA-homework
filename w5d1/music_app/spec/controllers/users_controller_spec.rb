@@ -27,7 +27,7 @@ RSpec.describe UsersController, :type => :controller do
 
     context "with valid params" do
       it "redirects user to bands index on success" do
-        post :create, params: { user: { email: "ameet@gmail.com", password: "password" } }
+        post :create, params: { user: { email: "jack_bruce@place.com", password: "password" } }
         expect(response).to redirect_to(bands_url)
       end
     end
