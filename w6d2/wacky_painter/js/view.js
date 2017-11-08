@@ -59,7 +59,7 @@ View.prototype.exercise5 = function () {
   //  'data-pos' of every square
 
   //your code here!
-  $('li').click(function()  {
+  $('.square').click(function()  {
     alert($(this).attr('data-pos')); 
   });
 };
