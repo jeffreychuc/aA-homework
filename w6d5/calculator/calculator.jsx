@@ -14,13 +14,21 @@ class Calculator extends React.Component {
   render() {
     return (
       <div>
+        <input onChange={this.setNum1} value={num1}/>
+        <input onChange={this.setNum2} value={num2}/>
         <h1>{this.state.result}</h1>
       </div>
     );
   }
 
   setNum1(e) {
-    // your code here
+    const num1 = e.target.value ? parseInt(e.target.value) : "";
+    this.setState({ num1 });
+  }
+
+  setNum2(e) {
+    const num2 = e.target.value ? parseInt(e.target.value) : "";
+    this.setState({ num2 });
   }
 
 }
