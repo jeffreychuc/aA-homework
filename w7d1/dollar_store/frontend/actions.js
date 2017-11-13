@@ -7,3 +7,5 @@ const selectCurrency = (baseCurrency, rates) => {
     }
   );
 };
+
+export default selectCurrency;

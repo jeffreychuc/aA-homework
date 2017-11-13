@@ -10207,6 +10207,9 @@ module.exports = __webpack_require__(133);
 "use strict";
 
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 var selectCurrency = function selectCurrency(baseCurrency, rates) {
   return {
     type: 'SWITCH_CURRENCY',
@@ -10214,6 +10217,8 @@ var selectCurrency = function selectCurrency(baseCurrency, rates) {
     rates: rates
   };
 };
+
+exports.default = selectCurrency;
 
 /***/ }),
 /* 92 */
